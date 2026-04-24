@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Market | Мои продажи</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="topbarMount"></div>
+
+    <main class="shell">
+      <div id="notice" class="notice hidden"></div>
+
+      <section class="panel section">
+        <div class="section-head">
+          <h2>Мои продажи</h2>
+          <div class="section-actions">
+            <a class="button ghost button-link" href="/purchases">Мои покупки</a>
+            <a class="button ghost button-link" href="/profile">Профиль</a>
+            <a class="button ghost button-link" href="/support">Помощь</a>
+          </div>
+        </div>
+        <div class="stats" id="profileBox"></div>
+      </section>
+
+      <section class="panel section">
+        <h2 id="formTitle">Новое объявление</h2>
+        <form id="itemForm" class="form-grid">
+          <input type="hidden" id="itemId" />
+
+          <label>
+            Название
+            <input id="title" class="input" required />
+          </label>
+
+          <label>
+            Цена, ₸
+            <input id="price" class="input" type="number" min="0" placeholder="Например: 15000" required />
+          </label>
+
+          <label>
+            Категория
+            <select id="category" class="select" required>
+              <option>Электроника</option>
+              <option>Мебель</option>
+              <option>Одежда</option>
+              <option>Учеба</option>
+              <option>Кухня</option>
+              <option>Спорт</option>
+              <option>Другое</option>
+            </select>
+          </label>
+
+          <label>
+            Локация
+            <input id="dormLocation" class="input" placeholder="Например: Корпус Б, этаж 3" required />
+          </label>
+
+          <label class="full">
+            Карта для перевода (16 цифр)
+            <input id="sellerCard" class="input" inputmode="numeric" maxlength="19" placeholder="4400 1234 5678 9012" required />
+          </label>
+
+          <label class="full">
+            Ссылка на изображение
+            <input id="imageUrl" class="input" type="url" />
+          </label>
+
+          <label class="full">
+            Описание
+            <textarea id="description" class="textarea" required></textarea>
+          </label>
+
+          <label>
+            Статус
+            <select id="status" class="select">
+              <option value="active">Активно</option>
+              <option value="sold">Продано</option>
+            </select>
+          </label>
+
+          <div class="form-actions">
+            <button id="submitBtn" class="button primary" type="submit">Опубликовать</button>
+            <button id="cancelEditBtn" class="button ghost hidden" type="button">Отменить</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel section">
+        <h2>Мои объявления</h2>
+        <div id="myItemsGrid" class="items-grid"></div>
+      </section>
+
+      <section class="panel section">
+        <h2>Сделки по моим объявлениям</h2>
+        <div id="salesGrid" class="items-grid"></div>
+      </section>
+    </main>
+
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+  </body>
+</html>

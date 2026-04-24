@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Market | Перевод</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="topbarMount"></div>
+
+    <main class="shell">
+      <div id="notice" class="notice hidden"></div>
+
+      <section class="checkout-layout">
+        <article class="panel section checkout-summary" id="checkoutSummary"></article>
+
+        <article class="panel section">
+          <div class="section-head">
+            <h2>Оплата переводом</h2>
+            <a class="button ghost button-link" id="backToItem" href="/">Назад к товару</a>
+          </div>
+
+          <p class="checkout-copy">
+            Переведите деньги на карту продавца и нажмите кнопку подтверждения. После этого продавец подтвердит
+            получение оплаты, а вы сможете подтвердить получение товара.
+          </p>
+
+          <div class="checkout-submit">
+            <button id="payBtn" class="button primary" type="button">Я перевел деньги</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/checkout.js"></script>
+  </body>
+</html>

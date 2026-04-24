@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Market | Мои покупки</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="topbarMount"></div>
+
+    <main class="shell">
+      <div id="notice" class="notice hidden"></div>
+
+      <section class="panel section">
+        <div class="section-head">
+          <h2>Мои покупки</h2>
+          <div class="section-actions">
+            <a class="button ghost button-link" href="/dashboard">К моим продажам</a>
+            <a class="button ghost button-link" href="/support">Помощь</a>
+          </div>
+        </div>
+        <div id="purchasesStats" class="stats"></div>
+      </section>
+
+      <section class="panel section">
+        <h2>История покупок</h2>
+        <div id="purchasesGrid" class="items-grid"></div>
+      </section>
+    </main>
+
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/purchases.js"></script>
+  </body>
+</html>

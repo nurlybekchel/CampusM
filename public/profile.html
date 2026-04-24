@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Market | Профиль</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="topbarMount"></div>
+
+    <main class="shell">
+      <div id="notice" class="notice hidden"></div>
+
+      <section class="panel section profile-head" id="profileHead"></section>
+
+      <section class="panel section">
+        <div class="section-head">
+          <h2>Контактные данные</h2>
+        </div>
+        <form id="profileForm" class="form-grid">
+          <label>
+            Имя
+            <input id="profileFullName" class="input" required />
+          </label>
+          <label>
+            Телефон
+            <input id="profilePhone" class="input" placeholder="+7 700 000 00 00" />
+          </label>
+          <label class="full">
+            Email
+            <input id="profileEmail" class="input" type="email" disabled />
+          </label>
+          <div class="form-actions">
+            <button id="profileSaveBtn" class="button primary" type="submit">Сохранить контакты</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel section">
+        <div class="section-head">
+          <h2>Статистика аккаунта</h2>
+          <div class="section-actions">
+            <a class="button ghost button-link" href="/dashboard">Мои продажи</a>
+            <a class="button ghost button-link" href="/purchases">Мои покупки</a>
+            <a class="button ghost button-link" href="/support">Помощь</a>
+          </div>
+        </div>
+        <div class="stats" id="profileStats"></div>
+      </section>
+
+      <section class="panel section">
+        <h2>Последние объявления</h2>
+        <div id="recentItems" class="items-grid"></div>
+      </section>
+    </main>
+
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/profile.js"></script>
+  </body>
+</html>

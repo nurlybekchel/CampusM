@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Market | Каталог</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="topbarMount"></div>
+
+    <main class="shell">
+      <section class="panel hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Campus second-hand</p>
+          <h1>Площадка продаж для студентов без лишнего шума</h1>
+          <p>
+            Находите нужные вещи рядом: техника, мебель, учебники и бытовые мелочи. Быстрые сделки,
+            прозрачные цены и живое сообщество внутри кампуса.
+          </p>
+        </div>
+        <div class="hero-cards" id="heroCounters"></div>
+      </section>
+
+      <section class="feature-grid">
+        <article class="panel section feature-card">
+          <p class="eyebrow">Навигация</p>
+          <h2>Быстрый старт</h2>
+          <p>Перейдите в нужный раздел: каталог, правила безопасной сделки или помощь по оплате.</p>
+          <div class="feature-actions">
+            <a class="button secondary button-link" href="/about">О сервисе</a>
+            <a class="button ghost button-link" href="/support">Помощь</a>
+          </div>
+        </article>
+
+        <article class="panel section feature-card">
+          <p class="eyebrow">Покупки</p>
+          <h2>Оплата в пару шагов</h2>
+          <p>У каждого товара теперь есть отдельная страница оплаты с проверкой карты и итогом заказа.</p>
+          <div class="feature-actions">
+            <a class="button ghost button-link" href="/purchases">История покупок</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel toolbar">
+        <input id="searchInput" class="input full-mobile" placeholder="Поиск по названию или описанию" />
+        <select id="categorySelect" class="select">
+          <option value="all">Все категории</option>
+        </select>
+        <input id="minInput" class="input" type="number" min="0" placeholder="Цена от" />
+        <input id="maxInput" class="input" type="number" min="0" placeholder="Цена до" />
+        <div class="toolbar-actions">
+          <select id="sortSelect" class="select">
+            <option value="newest">Сначала новые</option>
+            <option value="price_asc">Цена по возрастанию</option>
+            <option value="price_desc">Цена по убыванию</option>
+          </select>
+          <button id="resetBtn" class="button ghost" type="button">Сброс</button>
+        </div>
+      </section>
+
+      <section class="layout">
+        <div id="itemsGrid" class="items-grid"></div>
+      </section>
+    </main>
+
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/index.js"></script>
+  </body>
+</html>

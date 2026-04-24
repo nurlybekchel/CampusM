@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Market | Вход и регистрация</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="topbarMount"></div>
+
+    <main class="auth-wrap shell">
+      <section class="panel auth-card">
+        <aside class="auth-art">
+          <p class="eyebrow">Welcome back</p>
+          <h1>Один аккаунт для покупок и продаж</h1>
+          <p>
+            Публикуйте объявления, отслеживайте покупки и управляйте продажами внутри кампуса в одном месте.
+          </p>
+          <div class="auth-tip">
+            <strong>Тестовый админ:</strong>
+            <span>admin@dorm.local</span>
+            <span>Admin12345</span>
+          </div>
+        </aside>
+
+        <section class="auth-form">
+          <div class="auth-tabs" role="tablist" aria-label="Форма входа и регистрации">
+            <button id="tabLogin" class="auth-tab active" type="button">Вход</button>
+            <button id="tabRegister" class="auth-tab" type="button">Регистрация</button>
+          </div>
+
+          <div id="notice" class="notice hidden"></div>
+
+          <div id="loginBlock">
+            <h2>Вход в аккаунт</h2>
+            <form id="loginForm" class="form">
+              <input class="input" name="email" type="email" placeholder="Email" required />
+              <input class="input" name="password" type="password" placeholder="Пароль" required />
+              <button class="button primary" type="submit">Войти</button>
+            </form>
+          </div>
+
+          <div id="registerBlock" class="hidden">
+            <h2>Новый аккаунт</h2>
+            <form id="registerForm" class="form">
+              <input class="input" name="fullName" type="text" placeholder="Имя и фамилия" required />
+              <input class="input" name="email" type="email" placeholder="Email" required />
+              <input class="input" name="password" type="password" minlength="6" placeholder="Пароль (минимум 6 символов)" required />
+              <input class="input" name="confirmPassword" type="password" minlength="6" placeholder="Повторите пароль" required />
+              <button class="button primary" type="submit">Создать аккаунт</button>
+            </form>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/auth.js"></script>
+  </body>
+</html>
