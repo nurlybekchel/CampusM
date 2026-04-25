@@ -183,8 +183,8 @@
         <div class="site-footer-meta block">
           <p class="site-footer-caption">Контакты</p>
           <ul class="site-footer-list">
-            <li>support@campusmarket.local</li>
-            <li>+7 (700) 000-00-00</li>
+            <li>nurlybekjj00@gmail.com</li>
+            <li>+7 (708) 122-60-29</li>
             <li>Пн-Вс: 09:00-22:00</li>
           </ul>
           <p class="site-footer-text">© ${nowYear} Campus Market</p>
