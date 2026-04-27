@@ -1,3 +1,5 @@
+const SPECIALIST_CARD = "0000 0000 0000 0000"; // ← сюда вставьте номер карты специалиста
+
 const state = {
   user: null,
   item: null
@@ -22,18 +24,11 @@ function canBuy(item, user) {
   return true;
 }
 
-function cardDisplay(value) {
-  return String(value || "")
-    .replace(/\D/g, "")
-    .replace(/(\d{4})(?=\d)/g, "$1 ");
-}
-
 function renderItem() {
   if (!state.item) return;
 
   const buyAvailable = canBuy(state.item, state.user);
   const isOwner = state.user && state.item.seller?.id === state.user.id;
-  const sellerCard = cardDisplay(state.item.sellerCard);
 
   els.itemPage.innerHTML = `
     <div class="item-gallery">
@@ -61,10 +56,17 @@ function renderItem() {
       ${
         buyAvailable
           ? `
-          <article class="panel section">
-            <h3>Перевод продавцу</h3>
-            <p class="profile-subtitle">Переведите сумму ${App.formatMoney(state.item.price)} по номеру карты продавца:</p>
-            <p class="item-large-price">${App.escapeHtml(sellerCard || "Карта не указана")}</p>
+          <article class="panel section kaspi-warning">
+            <div class="kaspi-warning-icon">⚠️</div>
+            <div class="kaspi-warning-body">
+              <h3>Важно перед переводом!</h3>
+              <p>Переведите сумму <strong>${App.formatMoney(state.item.price)}</strong> на карту специалиста:</p>
+              <p class="item-large-price">${App.escapeHtml(SPECIALIST_CARD)}</p>
+              <p class="kaspi-note">В комментарии к переводу на Kaspi обязательно напишите:<br/>
+                <strong>имя продавца</strong> и <strong>что вы покупаете</strong>.<br/>
+                Например: <em>«Продавец: ${App.escapeHtml(state.item.seller?.name || "Имя")}, покупаю ${App.escapeHtml(state.item.title)}»</em>
+              </p>
+            </div>
           </article>
         `
           : ""
