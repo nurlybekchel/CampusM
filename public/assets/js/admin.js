@@ -57,9 +57,15 @@ function renderUsers() {
     .join("");
 }
 
+function formatCardDisplay(value) {
+  return String(value || "")
+    .replace(/\D/g, "")
+    .replace(/(\d{4})(?=\d)/g, "$1 ");
+}
+
 function renderItems() {
   if (!state.items.length) {
-    els.itemsBody.innerHTML = "<tr><td colspan=\"8\">Объявления не найдены.</td></tr>";
+    els.itemsBody.innerHTML = "<tr><td colspan=\"9\">Объявления не найдены.</td></tr>";
     return;
   }
 
@@ -72,6 +78,11 @@ function renderItems() {
         <td>${App.escapeHtml(item.category)}</td>
         <td>${App.formatMoney(item.price)}</td>
         <td>${App.escapeHtml(item.seller.name)}</td>
+        <td>
+          <span class="seller-card-badge">
+            💳 ${item.sellerCard ? App.escapeHtml(formatCardDisplay(item.sellerCard)) : "<span style='color:var(--muted)'>Не указана</span>"}
+          </span>
+        </td>
         <td>${item.status}</td>
         <td>${App.formatDate(item.createdAt)}</td>
         <td><button class="button danger" data-delete-item="${item.id}">Удалить</button></td>
