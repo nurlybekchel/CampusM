@@ -1,3 +1,5 @@
+const SPECIALIST_CARD = "0000 0000 0000 0000"; // ← сюда вставьте номер карты специалиста
+
 const state = {
   user: null,
   item: null
@@ -16,12 +18,6 @@ function getItemId() {
   return Number.isInteger(itemId) ? itemId : null;
 }
 
-function cardDisplay(value) {
-  return String(value || "")
-    .replace(/\D/g, "")
-    .replace(/(\d{4})(?=\d)/g, "$1 ");
-}
-
 function renderSummary() {
   els.checkoutSummary.innerHTML = `
     <p class="eyebrow">Перевод по карте</p>
@@ -31,8 +27,19 @@ function renderSummary() {
     <div class="summary-box">
       <div class="summary-row"><span>Категория</span><strong>${App.escapeHtml(state.item.category)}</strong></div>
       <div class="summary-row"><span>Локация</span><strong>${App.escapeHtml(state.item.dormLocation)}</strong></div>
-      <div class="summary-row"><span>Карта продавца</span><strong>${App.escapeHtml(cardDisplay(state.item.sellerCard) || "-")}</strong></div>
+      <div class="summary-row"><span>Карта специалиста</span><strong>${App.escapeHtml(SPECIALIST_CARD)}</strong></div>
       <div class="summary-row summary-total"><span>Итого к переводу</span><strong>${App.formatMoney(state.item.price)}</strong></div>
+    </div>
+
+    <div class="kaspi-warning" style="margin-top: 16px;">
+      <div class="kaspi-warning-icon">⚠️</div>
+      <div class="kaspi-warning-body">
+        <h3>Важно перед переводом!</h3>
+        <p class="kaspi-note">В комментарии к переводу на Kaspi обязательно напишите:<br/>
+          <strong>имя продавца</strong> и <strong>что вы покупаете</strong>.<br/>
+          Например: <em>«Продавец: ${App.escapeHtml(state.item.seller?.name || "Имя")}, покупаю ${App.escapeHtml(state.item.title)}»</em>
+        </p>
+      </div>
     </div>
   `;
   els.backToItem.href = `/item/${state.item.id}`;
