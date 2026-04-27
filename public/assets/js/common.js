@@ -184,7 +184,7 @@
           <p class="site-footer-caption">Контакты</p>
           <ul class="site-footer-list">
             <li>nurlybekjj00@gmail.com</li>
-            <li>+7 (708) 122-60-29</li>
+            <li>+7 (747) 749-59-87</li>
             <li>Пн-Вс: 09:00-22:00</li>
           </ul>
           <p class="site-footer-text">© ${nowYear} Campus Market</p>
